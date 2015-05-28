@@ -1,0 +1,50 @@
+  .maps{
+        position:relative;
+       width:928px;
+        height:713px;
+
+        margin:0 auto;
+    }
+
+
+.maps img, .maps canvas{
+        position:absolute;
+        top:0;
+        left:0;
+        z-index: 1;
+    }
+
+    .maps canvas{
+      z-index: 2;
+    }
+
+
+  .form{
+    position: fixed;
+    left: 0px;
+    top:0px;
+    bottom: 0px;
+    margin: auto;
+    width: 170px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  .form input{
+    margin: 20px 0px;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+    color: #EFFF00;
+    text-align: left;
+    width: 130px;
+  }
+
+  .form select{
+    width: 130px;
+    margin: 5px 0px;
+  }
