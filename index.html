@@ -6,10 +6,10 @@
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <script type="text/javascript" src="js/jspathfinding.js"></script>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="_plataform/www/js/jspathfinding.js"></script>
+  <script type="text/javascript" src="_plataform/www/js/jquery-1.11.3.min.js"></script>
 
-  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="_plataform/www/js/script.js"></script>
 
   <style>
   .ball{
@@ -28,29 +28,18 @@
 
   </style>
 
-  <link href="css/style.css" rel="stylesheet">
+  <link href="_plataform/www/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
   <div class="maps">
     <div class="ball"></div>
-    <img src="mapa.png" id="map" />
+    <img src="_plataform/www/mapa.png" id="map" />
   </div>
 
 
   <div class="form">
-    <form id="medidas" method="post">
-      <fieldset>
-        <legend>Manual</legend>
-        node[start]: <input type="text" name="start" value=""><br>
-        node[start][x]: <input type="text" name="start_x" value=""><br>
-        node[end]: <input type="text" name="end" value=""><br>
-        node[end][x]: <input type="text" name="end_x" value=""><br>
-        <input type="button" id="btn_medidas" value="Calcular" >
-      </fieldset>
-
-    </form>
 
     <form id="rotas" method="post">
       <fieldset>

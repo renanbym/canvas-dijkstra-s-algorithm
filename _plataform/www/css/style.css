@@ -23,28 +23,40 @@
     position: fixed;
     left: 0px;
     top:0px;
-    bottom: 0px;
     margin: auto;
-    width: 170px;
+    width: 100%;
     background: rgba(0,0,0,0.5);
     padding: 10px;
     color: #ffffff;
     font-weight: bold;
+    z-index: 99999999;
+    height: 60px;
+  }
+
+  .form fieldset{
+      height: 40px;
+      padding: 0px;
   }
 
   .form input{
-    margin: 20px 0px;
     border: none;
-    border-bottom: 1px solid #ffffff;
-    background: transparent;
-    padding: 5px 10px 5px 10px;
+
+    margin-left: 20px;
     font-size: 14px;
     color: #EFFF00;
     text-align: left;
-    width: 130px;
+    width: 50px;
+    float: left;
+    z-index: 999999;
+
+  }
+
+  .form input:hover{
+      border: 2px solid #000;
   }
 
   .form select{
-    width: 130px;
-    margin: 5px 0px;
+    width: 100px;
+    margin: 0px 5px;
+    float: left;
   }

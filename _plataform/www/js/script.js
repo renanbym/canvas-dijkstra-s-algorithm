@@ -3,30 +3,23 @@ $(function(){
   var beacons = '{ "vidro": { "x" : 94 ,  "y": 604 }, "excesso": { "x" : 94 ,  "y": 88 }, "pessoal": { "x" : 613 ,  "y": 88 }, "aquario": { "x" : 613 ,  "y": 817 } }';
   window.beacons = JSON.parse(beacons);
 
-  $('#btn_medidas').click(function (e) {
-    e.preventDefault();
-    var start = window.n[$('input[name=start]').val()][$('input[name=start_x]').val()];
-    var end = window.n[$('input[name=end]').val()][$('input[name=end_x]').val()];
+  $('#btn_rota').on("touchstart mousedown",function(e){
+      e.preventDefault();
 
-    $('.ball').css({top: $('input[name=start]').val(), left: $('input[name=start_x]').val() });
-    findRoute( start, end );
+
+      var s_start = $('#rota_start').val();
+      var s_end = $('#rota_end').val();
+
+      var start = window.n[ window.beacons[s_start].x ][ window.beacons[s_start].y ];
+      var end = window.n[ window.beacons[s_end].x ][ window.beacons[s_end].y ];
+
+      findRoute( start, end );
 
   });
 
-  $('#btn_rota').click(function (e) {
-    e.preventDefault();
-
-
-    var s_start = $('#rota_start').val();
-    var s_end = $('#rota_end').val();
-
-    var start = window.n[ window.beacons[s_start].x ][ window.beacons[s_start].y ];
-    var end = window.n[ window.beacons[s_end].x ][ window.beacons[s_end].y ];
-
-    findRoute( start, end );
-  });
 
   var nodes = {};
+  var mapa = {};
   window.p = new PathFinding();
 
   $('#map').load(function(){
@@ -62,7 +55,7 @@ $(function(){
           }
 
           nodes[r][c] = window.p.addNode(c, r);
-
+          mapa[c+'x'+r] = '{ x:'+c+' , y: '+r+' }';
           // context.fillStyle='rgb(255,0,0)';
           // context.fillRect(c, r, window.nodeSize, window.nodeSize);
 
@@ -90,16 +83,9 @@ $(function(){
 
     window.n = nodes;
 
+    // console.log( JSON.stringify(mapa) );
     // delete window.canvas;
 
-    var p1 = Object.keys(nodes)[0];
-    var p2 = Object.keys(nodes[p1])[0];
-
-    var p3 = Object.keys(nodes)[10];
-    var p4 = Object.keys(nodes[p3])[0];
-
-    param(p1, p2, p3, p4);
-    $( "#btn_medidas" ).trigger( "click" );
 
   });
 
